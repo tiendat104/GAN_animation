@@ -3,7 +3,7 @@
 In this project, i implement DCGAN for animation images. During the implementation, i got a lot of problems such as "mode collapse", "low quality generated image", "vanishing gradient", "checkerboard effect". I have step-by-step overcome these problems by applying some tricks and techniques recommended for GAN. 
 For more detail, i overcome the "mode collapse" problem by applying "unrolled GAN" technique, that mentioned in https://jonathan-hui.medium.com/gan-unrolled-gan-how-to-reduce-mode-collapse-af5f2f7b51cd , for implementation of "unrolled GAN", i reference to the code from https://github.com/andrewliao11/unrolled-gans/blob/master/unrolled_gan.ipynb
 
-To overcome the "vanishing gradient" problem, i make the discriminator less strong by flipping labels by 5% when training both generator and discriminator. This trick is mentioned in https://github.com/jaingaurav3/GAN-Hacks (trick 2 and trick 6). Furthermore, i also apply "label smoothing" technique and "dropout layer for discriminator" to limit strength of the discriminator. By using thse tricks, the accuracy of the discriminator rarely get higher than 0.95 ( actually it usually ranges from 0.6 to 0.9) and its loss never reach 0 ( it usually ranges from 0.5 to 1.0). So, the tricks effectively helps my model to escape from the "vanishing gradient" problem. Furthermore,
+To overcome the "vanishing gradient" problem, i make the discriminator less strong by flipping labels by 5% when training both generator and discriminator. This trick is mentioned in https://github.com/jaingaurav3/GAN-Hacks (trick 2 and trick 6). Furthermore, i also apply "label smoothing" technique and "dropout layer for discriminator" to limit strength of the discriminator. By using thse tricks, the accuracy of the discriminator rarely get higher than 0.95 ( actually it usually ranges from 0.6 to 0.9) and its loss never reach 0 ( it usually ranges from 0.5 to 1.0). So, the tricks effectively helps my model to escape from the "vanishing gradient" problem. 
 
 To improve the quality of generated image, my recommendation is to add batch normalization to the generator. I have tried to remove batch normalization layers from generator and then, the model started to generate garbage images without any reasonable pattern. Actually, i also add batch normalization to the discrimator because it helps model converge faster and also helps the training process more stable. 
 
@@ -15,6 +15,7 @@ I also implement some other tricks such as :
 - Leaky ReLU
 - Sampling vectors from Gaussian distribution as input for the generator
 - A deeper architecture for discriminator than generator 
+
 The tricks are mentioned in https://github.com/jaingaurav3/GAN-Hacks 
 
 # Data preparation
