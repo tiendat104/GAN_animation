@@ -23,6 +23,9 @@ The tricks are mentioned in https://github.com/jaingaurav3/GAN-Hacks
 The data folder contains images used for training GAN model. For demo, i only upload 20 images in the "data" folder. You can download the full dataset from 
 https://www.kaggle.com/soumikrakshit/anime-faces
 
+# Data visualization 
+![](assets/data_visualize.png)
+
 # Installation 
 - tensorflow==1.15.0
 - keras==2.3.1
